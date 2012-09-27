@@ -165,6 +165,7 @@ module Mongoid::TaggableWithContext
       # 1). strip all white spaces. Could leave blank strings (e.g. foo, , bar, baz)
       # 2). remove all blank strings
       # 3). remove duplicate
+      ary = [] unless ary
       ary.compact.map(&:strip).reject(&:blank?).uniq
     end
 

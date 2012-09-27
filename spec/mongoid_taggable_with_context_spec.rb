@@ -108,6 +108,12 @@ describe Mongoid::TaggableWithContext do
       @m.tags_array = ["some", "", "new", "", "tags"]
       @m.tags_array.should == %w[some new tags]
     end
+
+    it "should save an empty array if set to nil" do
+      @m.tags_array = nil
+      @m.tags_array.should == []
+    end
+
   end
 
   context "changing separator" do
